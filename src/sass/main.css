@@ -214,8 +214,8 @@ p {
 
 @media screen and (min-width: 768px) {
   .body-bg--bottom {
-    height: 1282px;
-    background-size: 100% 1227px;
+    height: 1248px;
+    background-size: 100% 1191px;
     background-image: url(../images/bg-image/tablet/review-bg.png);
   }
 }
@@ -228,7 +228,7 @@ p {
 
 @media screen and (min-width: 1280px) {
   .body-bg--bottom {
-    height: 1509px;
+    height: 1478px;
     background-size: 100% 1509px;
     background-image: url(../images/bg-image/desktop/review-bg.png);
   }
@@ -447,10 +447,7 @@ p {
   cursor: pointer;
   -webkit-transition: background-color var(--duration) var(--cubic) var(--delay);
   transition: background-color var(--duration) var(--cubic) var(--delay);
-}
-
-.button:hover, .button:focus {
-  background-color: var(--accent-text-color);
+  --hover: #a6ab6c;
 }
 
 @media screen and (max-width: 767.98px) {
@@ -475,6 +472,29 @@ p {
     padding-right: 44px;
     margin-top: 30px;
     min-width: 158px;
+  }
+}
+
+.button:hover,
+.button:focus {
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+  -webkit-box-shadow: 0 0 0 0.5em rgba(255, 255, 255, 0);
+          box-shadow: 0 0 0 0.5em rgba(255, 255, 255, 0);
+  background-color: var(--icon-color);
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 var(--hover);
+            box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 var(--hover);
+            box-shadow: 0 0 0 0 var(--hover);
   }
 }
 
@@ -1619,8 +1639,16 @@ input {
   overflow: hidden;
 }
 
-.registration {
-  padding-top: 30px;
+@media screen and (max-width: 767.98px) {
+  .registration {
+    padding-top: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .registration {
+    padding-top: 5px;
+  }
 }
 
 .reg-conteiner {
